@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import pictemp from '../assets/pictemp.jpg'
 import { useAppContext } from '../../AppProvider'
 import algosdk, { waitForConfirmation } from 'algosdk'
 import { SignerTransaction } from '@perawallet/connect/dist/util/model/peraWalletModels'
@@ -74,7 +73,7 @@ function AlgoAssets() {
               console.log("Couldn't sign Opt-in txns", error);
             }
           }} key={item.asset_id} className='flex justify-center items-center gap-20 border border-grey p-3 rounded-lg cursor-pointer hover:scale-105 transition transform duration-100 ease-in-out'>
-            <img className='w-20' src={item.logo || pictemp} alt="" />
+            <img className='w-20' src={item.logo} alt="" />
             <div className='flex justify-center items-center flex-col'>
               <p>{item.name}</p>
               <p>{item.asset_id}</p>
